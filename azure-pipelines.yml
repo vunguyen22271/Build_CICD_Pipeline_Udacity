@@ -39,9 +39,6 @@ stages:
         versionSpec: '$(pythonVersion)'
       displayName: 'Use Python $(pythonVersion)'
 
-  - job: InstallRequirements
-    dependsOn: BuildJob
-    steps:
     - script: |
         cd flask-sklearn
 
@@ -53,9 +50,6 @@ stages:
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
-  - job: ArchiveFiles
-    dependsOn: InstallRequirements
-    steps:
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
@@ -65,9 +59,6 @@ stages:
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
 
-  - job: Upload
-    dependsOn: ArchiveFiles
-    steps:
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       displayName: 'Upload package'
       artifact: drop
