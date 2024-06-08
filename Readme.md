@@ -20,7 +20,7 @@ https://trello.com/invite/b/6Qbl0woS/ATTI8f999c633d862464f48ec2d769779f8dA9279F6
 # Instructions
 
 ## Video Record:
-https://youtu.be/62Lmn_VKeLI
+https://youtu.be/YDsbKvnjf5g
 
 1. Clone the repository
 ```bash
