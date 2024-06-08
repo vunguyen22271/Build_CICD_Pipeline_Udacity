@@ -29,16 +29,19 @@ variables:
 stages:
 - stage: Build
   displayName: Build stage
+  pool:
+    vmImage: $(vmImageName)
   jobs:
   - job: BuildJob
-    pool:
-      vmImage: $(vmImageName)
     steps:
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '$(pythonVersion)'
       displayName: 'Use Python $(pythonVersion)'
 
+  - job: InstallRequirements
+    dependsOn: BuildJob
+    steps:
     - script: |
         cd flask-sklearn
 
@@ -50,6 +53,9 @@ stages:
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
+  - job: ArchiveFiles
+    dependsOn: InstallRequirements
+    steps:
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
@@ -59,6 +65,9 @@ stages:
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
 
+  - job: Upload
+    dependsOn: ArchiveFiles
+    steps:
     - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       displayName: 'Upload package'
       artifact: drop
@@ -67,10 +76,10 @@ stages:
   displayName: 'Deploy Web App'
   dependsOn: Build
   condition: succeeded()
+  pool:
+    vmImage: $(vmImageName)
   jobs:
   - deployment: DeploymentJob
-    pool:
-      vmImage: $(vmImageName)
     environment: $(environmentName)
     strategy:
       runOnce:
