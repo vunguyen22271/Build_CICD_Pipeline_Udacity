@@ -1,0 +1,1 @@
+[![Build Status](https://dev.azure.com/loxvuonfire01/microk8s/_apis/build/status%2FCI?branchName=master)](https://dev.azure.com/loxvuonfire01/microk8s/_build/latest?definitionId=17&branchName=master)
