@@ -102,4 +102,3 @@ az webapp up --name flask-ml-Azure-vunguyen22271 --resource-group Azuredevops --
 
 ### The README contains a screenshot of a successful run of the project in Azure Pipelines.
 ![alt text](./images/image-5.png)
-
