@@ -18,6 +18,10 @@ https://docs.google.com/spreadsheets/d/1wwPCObb3EBmOaZjHSTcR8W9PkRywCyxSx-h5_dss
 https://trello.com/invite/b/6Qbl0woS/ATTI8f999c633d862464f48ec2d769779f8dA9279F62/agileboard
 
 # Instructions
+
+## Video Record:
+https://youtu.be/62Lmn_VKeLI
+
 1. Clone the repository
 ```bash
 git clone https://github.com/vunguyen22271/Build_CICD_Pipeline_Udacity.git
