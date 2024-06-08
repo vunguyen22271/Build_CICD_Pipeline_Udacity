@@ -16,6 +16,8 @@ https://docs.google.com/spreadsheets/d/1wwPCObb3EBmOaZjHSTcR8W9PkRywCyxSx-h5_dss
 
 ## Trello Board
 https://trello.com/invite/b/6Qbl0woS/ATTI8f999c633d862464f48ec2d769779f8dA9279F62/agileboard
+![alt text](image-9.png)
+![alt text](image-10.png)
 
 # Instructions
 
